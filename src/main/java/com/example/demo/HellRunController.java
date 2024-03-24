@@ -19,4 +19,5 @@ public class HellRunController {
         model.addAttribute("hellrunners", runners);
         return "hellrunners";
     }
+
 }
