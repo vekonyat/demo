@@ -3,18 +3,18 @@ package com.example.demo;
 // HelloEntity.java
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class HellRunnerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private long runnerId;
+
     private String runnerName;
     private int runnerAge;
     private int runnerGender;

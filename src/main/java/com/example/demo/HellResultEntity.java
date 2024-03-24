@@ -3,44 +3,49 @@ package com.example.demo;
 // HellResultEntity.java
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
 
 @Entity
 public class HellResultEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String raceName;
-    private long raceId;
-    private int raceKm;
+    @ManyToOne
+    @JoinColumn(name = "runnerId", nullable = false)
+    private HellRunnerEntity runner;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "raceId", nullable = false)
+    private HellRaceEntity race;
+
+    private int resultTime;
 
 
-    public long getRaceId() {
-        return raceId;
+    public HellRaceEntity getRace() {
+        return race;
     }
 
-    public void setRaceId(long raceId) {
-        this.raceId = raceId;
+    public void setRace(HellRaceEntity race) {
+        this.race = race;
     }
 
 
-    public String getRaceName() {
-        return raceName;
+    public HellRunnerEntity getRunner() {
+        return runner;
     }
 
-    public void setRaceName(String raceName) {
-        this.raceName = raceName;
+    public void setRunner(HellRunnerEntity runner) {
+        this.runner = runner;
     }
 
-    public int getRaceKm() {
-        return raceKm;
+    public int getResultTime() {
+        return resultTime;
     }
 
-    public void setRaceKm(int raceKm) {
-        this.raceKm = raceKm;
+    public void setResultTime(int resultTime) {
+        this.resultTime = resultTime;
     }
 
 
