@@ -10,6 +10,17 @@ import jakarta.persistence.Id;
 
 @Entity
 public class HellRunnerEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private long runnerId;
+    private String runnerName;
+    private int runnerAge;
+    private int runnerGender;
+    public HellRunnerEntity() {
+    }
+
     public long getRunnerId() {
         return runnerId;
     }
@@ -17,11 +28,6 @@ public class HellRunnerEntity {
     public void setRunnerId(long runnerId) {
         this.runnerId = runnerId;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long runnerId;
-
     public String getRunnerName() {
         return runnerName;
     }
@@ -30,9 +36,7 @@ public class HellRunnerEntity {
         this.runnerName = runnerName;
     }
 
-    private String runnerName;
-
-    public int getRunnerAge() {
+     public int getRunnerAge() {
         return runnerAge;
     }
 
@@ -40,18 +44,12 @@ public class HellRunnerEntity {
         this.runnerAge = runnerAge;
     }
 
-    private int runnerAge;
-
-    public int getRunnerGender() {
+     public int getRunnerGender() {
         return runnerGender;
     }
 
     public void setRunnerGender(int runnerGender) {
         this.runnerGender = runnerGender;
     }
-
-    private int runnerGender;
-
-
 
 }
