@@ -11,17 +11,26 @@ import jakarta.persistence.*;
 public class HellResultEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long resultId;
+
     @ManyToOne
     @JoinColumn(name = "runnerId", nullable = false)
     private HellRunnerEntity runner;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "raceId", nullable = false)
     private HellRaceEntity race;
 
     private int resultTime;
 
+    public Long getResultId() {
+        return resultId;
+    }
+
+    public void setResultId(Long race) {
+        this.resultId = resultId;
+    }
 
     public HellRaceEntity getRace() {
         return race;

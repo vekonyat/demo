@@ -14,6 +14,7 @@ public class HellRaceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long raceId;
+
     private String raceName;
     private int raceKm;
 
