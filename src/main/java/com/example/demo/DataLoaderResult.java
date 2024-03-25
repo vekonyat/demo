@@ -25,6 +25,7 @@ public class DataLoaderResult implements CommandLineRunner {
         HellRunnerEntity hellrunnerEntity1 = new HellRunnerEntity();
         hellrunnerEntity1.setRunnerId(1);
         hellrunnerEntity1.setRunnerName("Tóni");
+        hellrunnerEntity1.setRunnerAge(35);
         hellrunnerEntity1.setRunnerGender(1);
 
         hellrunnerRepository.save(hellrunnerEntity1);
@@ -32,6 +33,7 @@ public class DataLoaderResult implements CommandLineRunner {
         HellRunnerEntity hellrunnerEntity2 = new HellRunnerEntity();
         hellrunnerEntity2.setRunnerId(2);
         hellrunnerEntity2.setRunnerName("Barbi");
+        hellrunnerEntity2.setRunnerAge(35);
         hellrunnerEntity2.setRunnerGender(2);
 
         hellrunnerRepository.save(hellrunnerEntity2);
@@ -39,6 +41,7 @@ public class DataLoaderResult implements CommandLineRunner {
         HellRunnerEntity hellrunnerEntity3 = new HellRunnerEntity();
         hellrunnerEntity3.setRunnerId(3);
         hellrunnerEntity3.setRunnerName("Ádám");
+        hellrunnerEntity3.setRunnerAge(35);
         hellrunnerEntity3.setRunnerGender(1);
 
         hellrunnerRepository.save(hellrunnerEntity3);
@@ -46,6 +49,7 @@ public class DataLoaderResult implements CommandLineRunner {
         HellRunnerEntity hellrunnerEntity4 = new HellRunnerEntity();
         hellrunnerEntity4.setRunnerId(4);
         hellrunnerEntity4.setRunnerName("Viktor");
+        hellrunnerEntity4.setRunnerAge(35);
         hellrunnerEntity4.setRunnerGender(1);
 
         hellrunnerRepository.save(hellrunnerEntity4);

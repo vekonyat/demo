@@ -23,4 +23,16 @@ public class HellRunRestController {
     public List<HellRunnerEntity> getAllRunners_API() {
         return hellrunnerRepository.findAll();
     }
+
+    @PostMapping("/addRunner")
+    public ResponseEntity addRunner( @RequestBody HellRunnerEntity runnerData) {
+//        HellRunnerEntity hellrunnerEntity = new HellRunnerEntity();
+//        hellrunnerEntity.setRunnerId(runnerData.getRunnerId());
+//        hellrunnerEntity.setRunnerName(runnerData.getRunnerName());
+//        hellrunnerEntity.setRunnerGender(runnerData.getRunnerGender());
+
+        hellrunnerRepository.save(runnerData);
+            return ResponseEntity.ok().build();
+
+    }
 }
