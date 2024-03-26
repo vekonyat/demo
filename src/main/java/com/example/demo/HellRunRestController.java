@@ -14,13 +14,13 @@ import java.util.stream.Collectors;
 public class HellRunRestController {
 
     @Autowired
-    private HellRunnerRepository hellrunnerRepository;
+    private final HellRunnerRepository hellrunnerRepository;
 
     @Autowired
-    private HellResultRepository hellresultRepository;
+    private final HellResultRepository hellresultRepository;
 
     @Autowired
-    private HellRaceRepository hellraceRepository;
+    private final HellRaceRepository hellraceRepository;
 
     @Autowired
     public HellRunRestController(HellRunnerRepository hellrunnerRepository, HellResultRepository hellresultRepository, HellRaceRepository hellraceRepository) {
@@ -61,6 +61,18 @@ public class HellRunRestController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/addResult")
+    public ResponseEntity addResult( @RequestBody AddResultEntity resultData) {
+    HellResultEntity newResult = new HellResultEntity();
+
+        newResult.setResultTime(resultData.getResultTime());
+        newResult.setRace(hellraceRepository.findById(resultData.getRaceId()).orElse(null));
+        newResult.setRunner(hellrunnerRepository.findById(resultData.getRunnerId()).orElse(null));
+        hellresultRepository.save(newResult);
+        return ResponseEntity.ok().build();
+
+    }
+
     public static class RaceUpdateRequest {
         private long raceId;
         private String raceName;
@@ -84,5 +96,31 @@ public class HellRunRestController {
         public void setRaceKm(int raceKm) {     this.raceKm = raceKm;      }
     }
 
+    public static class AddResultEntity {
+        private long resultId;
+        private long raceId;
+        private long runnerId;
+        private int resultTime;
+
+        public long getResultId() {        return resultId;     }
+        public void setResultId(long resultId) {
+            this.resultId = resultId;
+        }
+
+        public long getRaceId() {        return raceId;     }
+        public void setRaceId(long raceId) {
+            this.raceId = raceId;
+        }
+
+        public long getRunnerId() {        return runnerId;     }
+        public void setRunnerId(long runnerId) {
+            this.runnerId =  runnerId;
+        }
+
+        public int getResultTime() {
+            return resultTime;
+        }
+        public void setResultTime(int resultTime) {     this.resultTime = resultTime;      }
+    }
 
 }
