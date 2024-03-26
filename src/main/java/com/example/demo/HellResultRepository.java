@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface HellResultRepository extends JpaRepository<HellResultEntity, Long> {
 
-    @Query("SELECT r.runner.runnerId, r.resultTime FROM HellResultEntity r WHERE r.race.raceId = ?1 ORDER BY r.resultTime")
+    @Query("SELECT r.runner.runnerName, r.resultTime FROM HellResultEntity r WHERE r.race.raceId = ?1 ORDER BY r.resultTime")
     List<Object[]> findRunnerIdsAndResultTimeByRaceId(Long raceId);
 }

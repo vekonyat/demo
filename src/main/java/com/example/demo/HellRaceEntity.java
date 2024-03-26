@@ -19,9 +19,7 @@ public class HellRaceEntity {
     private int raceKm;
 
 
-    public long getRaceId() {
-        return raceId;
-    }
+    public long getRaceId() {        return raceId;     }
     public void setRaceId(long raceId) {
         this.raceId = raceId;
     }
