@@ -39,13 +39,11 @@ public class HellRunRestController {
 
         hellrunnerRepository.save(runnerData);
             return ResponseEntity.ok().build();
-
     }
 
     @GetMapping("/getRaceRunners/{id}")
     public List<Object[]> getRunnerIdsByRaceId(@PathVariable Long id) {
       return hellresultRepository.findRunnerIdsAndResultTimeByRaceId(id);
-
     }
 
     @PostMapping("/updateRace")
@@ -71,6 +69,22 @@ public class HellRunRestController {
         hellresultRepository.save(newResult);
         return ResponseEntity.ok().build();
 
+    }
+
+    @GetMapping("/getAverageTime/{id}")
+    public double getAverageTimeByRaceId(@PathVariable Long id) {
+        List<Object[]> dataList = hellresultRepository.getTimesByRaceId(id);
+        double sum = 0;
+        int count = 0;
+
+        for (Object[] array : dataList) {
+            for (Object obj : array) {
+               sum += ((Number) obj).doubleValue();
+               count++;
+            }
+        }
+
+        return sum/count;
     }
 
     public static class RaceUpdateRequest {
