@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 public class HellRunApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HellRunApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(HellRunApplication.class, args);
 
-	}
+    }
 }

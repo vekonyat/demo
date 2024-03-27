@@ -35,19 +35,19 @@ public class HellRunRestController {
     }
 
     @PostMapping("/addRunner")
-    public ResponseEntity addRunner( @RequestBody HellRunnerEntity runnerData) {
+    public ResponseEntity addRunner(@RequestBody HellRunnerEntity runnerData) {
 
         hellrunnerRepository.save(runnerData);
-            return ResponseEntity.ok().build();
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/getRaceRunners/{id}")
     public List<Object[]> getRunnerIdsByRaceId(@PathVariable Long id) {
-      return hellresultRepository.findRunnerIdsAndResultTimeByRaceId(id);
+        return hellresultRepository.findRunnerIdsAndResultTimeByRaceId(id);
     }
 
     @PostMapping("/updateRace")
-    public ResponseEntity updateRace( @RequestBody RaceUpdateRequest raceUpdateRequest) {
+    public ResponseEntity updateRace(@RequestBody RaceUpdateRequest raceUpdateRequest) {
 
         HellRaceEntity race = new HellRaceEntity();
 
@@ -60,8 +60,8 @@ public class HellRunRestController {
     }
 
     @PostMapping("/addResult")
-    public ResponseEntity addResult( @RequestBody AddResultEntity resultData) {
-    HellResultEntity newResult = new HellResultEntity();
+    public ResponseEntity addResult(@RequestBody AddResultEntity resultData) {
+        HellResultEntity newResult = new HellResultEntity();
 
         newResult.setResultTime(resultData.getResultTime());
         newResult.setRace(hellraceRepository.findById(resultData.getRaceId()).orElse(null));
@@ -79,12 +79,12 @@ public class HellRunRestController {
 
         for (Object[] array : dataList) {
             for (Object obj : array) {
-               sum += ((Number) obj).doubleValue();
-               count++;
+                sum += ((Number) obj).doubleValue();
+                count++;
             }
         }
 
-        return sum/count;
+        return sum / count;
     }
 
     public static class RaceUpdateRequest {
@@ -92,7 +92,10 @@ public class HellRunRestController {
         private String raceName;
         private int raceKm;
 
-        public long getRaceId() {        return raceId;     }
+        public long getRaceId() {
+            return raceId;
+        }
+
         public void setRaceId(long raceId) {
             this.raceId = raceId;
         }
@@ -100,6 +103,7 @@ public class HellRunRestController {
         public String getRaceName() {
             return raceName;
         }
+
         public void setRaceName(String raceName) {
             this.raceName = raceName;
         }
@@ -107,7 +111,10 @@ public class HellRunRestController {
         public int getRaceKm() {
             return raceKm;
         }
-        public void setRaceKm(int raceKm) {     this.raceKm = raceKm;      }
+
+        public void setRaceKm(int raceKm) {
+            this.raceKm = raceKm;
+        }
     }
 
     public static class AddResultEntity {
@@ -116,25 +123,37 @@ public class HellRunRestController {
         private long runnerId;
         private int resultTime;
 
-        public long getResultId() {        return resultId;     }
+        public long getResultId() {
+            return resultId;
+        }
+
         public void setResultId(long resultId) {
             this.resultId = resultId;
         }
 
-        public long getRaceId() {        return raceId;     }
+        public long getRaceId() {
+            return raceId;
+        }
+
         public void setRaceId(long raceId) {
             this.raceId = raceId;
         }
 
-        public long getRunnerId() {        return runnerId;     }
+        public long getRunnerId() {
+            return runnerId;
+        }
+
         public void setRunnerId(long runnerId) {
-            this.runnerId =  runnerId;
+            this.runnerId = runnerId;
         }
 
         public int getResultTime() {
             return resultTime;
         }
-        public void setResultTime(int resultTime) {     this.resultTime = resultTime;      }
+
+        public void setResultTime(int resultTime) {
+            this.resultTime = resultTime;
+        }
     }
 
 }

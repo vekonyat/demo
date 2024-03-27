@@ -5,6 +5,7 @@ package com.example.demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +19,10 @@ public class HellRaceEntity {
     private String raceName;
     private int raceKm;
 
+    public long getRaceId() {
+        return raceId;
+    }
 
-    public long getRaceId() {        return raceId;     }
     public void setRaceId(long raceId) {
         this.raceId = raceId;
     }
@@ -27,6 +30,7 @@ public class HellRaceEntity {
     public String getRaceName() {
         return raceName;
     }
+
     public void setRaceName(String raceName) {
         this.raceName = raceName;
     }
@@ -34,6 +38,7 @@ public class HellRaceEntity {
     public int getRaceKm() {
         return raceKm;
     }
+
     public void setRaceKm(int raceKm) {
         this.raceKm = raceKm;
     }

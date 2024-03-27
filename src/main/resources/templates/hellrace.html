@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To The Race In The Hell</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="px-4 py-5 my-5 text-center">
+        <img src="../static/raceinhell.png"class="d-block mx-auto mb-4" th:src="@{../raceinhell.png}" alt="" width="250" height="150">
+        <h1 class="display-5 fw-bold text-body-emphasis">Welcome To This Race In The Hell</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Press a button and have some infernal fun</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <form th:action="@{/runners}" th:method="get">
+                    <button class="btn btn-primary btn-lg px-4 mr-1 gap-3" type="submit">Versenyek</button>
+                </form>
+
+                <button type="button" class="btn btn-primary btn-lg px-4 mr-1 gap-3">Új Verseny</button>
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Eredmények</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>tml>
