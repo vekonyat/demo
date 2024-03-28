@@ -43,7 +43,7 @@ public class HellRunRestController {
 
     @GetMapping("/getRaceRunners/{id}")
     public List<Object[]> getRunnerIdsByRaceId(@PathVariable Long id) {
-        return hellresultRepository.findRunnerIdsAndResultTimeByRaceId(id);
+        return hellresultRepository.findRunnerNamesAndResultTimeByRaceId(id);
     }
 
     @PostMapping("/updateRace")

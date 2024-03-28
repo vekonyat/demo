@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <style>
-    h1 {
-    text-align: center;
-    }
+        h1 {
+        text-align: center;
+        }
 
     </style>
     <meta charset="UTF-8">
-    <title>All Racess</title>
+    <title>Result Of All Runners</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -17,18 +17,16 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
-            <th>Km</th>
+            <th>Time</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="race : ${hellraces}">
-            <td th:text="${race.raceId}"></td>
-            <td th:text="${race.raceName}"></td>
-            <td th:text="${race.raceKm}"></td>
+        <tr th:each="runner : ${runners}">
+            <td th:text="${runner[0]}"></td>
+            <td th:text="${runner[1]}"></td>
             <td>
-           <a th:href="@{/getRaceRunners/{id}(id=${race.raceId})}" class="btn btn-primary">Részletek</a>
+      <!--          <a th:href="@{/getRaceRunners/{id}(id=${race.raceId})}" class="btn btn-primary">Részletek</a> -->
             </td>
         </tr>
         </tbody>
