@@ -12,13 +12,13 @@ import java.util.List;
 public class HellRunController {
 
     @Autowired
-    private HellRunnerRepository hellrunnerRepository;
+    private HellRaceRepository hellraceRepository;
 
-    @GetMapping("/runners")
-    public String getAllRunners(Model model) {
-        List<HellRunnerEntity> runners = hellrunnerRepository.findAll();
-        model.addAttribute("hellrunners", runners);
-        return "hellrunners";
+    @GetMapping("/races")
+    public String getAllRaces(Model model) {
+        List<HellRaceEntity> races = hellraceRepository.findAll();
+        model.addAttribute("hellraces", races);
+        return "hellraces";
     }
 
     @GetMapping("/")
