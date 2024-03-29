@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="En" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add A New Race</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Add New Race</h1>
+    <form th:action="@{/addnewrace}" th:object="${raceData}" method="post">
+        <div class="form-group">
+            <label for="raceName">A verseny neve:</label>
+            <input type="text" id="raceName"  th:field="*{raceName}" class="form-control"/>
+            <label for="raceKm">Versenytáv:</label>
+            <input type="number" id="raceKm" th:field="*{raceKm}" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Race</button>
+    </form>
+</div>
+</body>
+</html>
