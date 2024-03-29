@@ -19,5 +19,13 @@
         <button type="submit" class="btn btn-primary">Add Race</button>
     </form>
 </div>
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <form th:action="@{/}" th:method="get">
+        <button class="btn btn-primary btn-lg px-4 mr-1 gap-3" type="submit">Kezdőlap</button>
+    </form>
+    <form th:action="@{/races}" th:method="get">
+        <button type="submit" class="btn btn-primary btn-lg px-4 mr-1 gap-3">Versenyek</button>
+    </form>
+</div>
 </body>
 </html>
