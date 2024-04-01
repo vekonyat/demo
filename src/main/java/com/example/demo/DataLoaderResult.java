@@ -20,8 +20,7 @@ public class DataLoaderResult implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // create result entities
-
+        // create runner entities
         HellRunnerEntity hellrunnerEntity1 = new HellRunnerEntity();
         hellrunnerEntity1.setRunnerId(1);
         hellrunnerEntity1.setRunnerName("Tóni");
@@ -54,6 +53,7 @@ public class DataLoaderResult implements CommandLineRunner {
 
         hellrunnerRepository.save(hellrunnerEntity4);
 
+        // create race entities
         HellRaceEntity hellraceEntity1 = new HellRaceEntity();
         hellraceEntity1.setRaceId(1);
         hellraceEntity1.setRaceName("Race in hell");
@@ -68,6 +68,7 @@ public class DataLoaderResult implements CommandLineRunner {
 
         hellraceRepository.save(hellraceEntity2);
 
+        // create result entities
         HellResultEntity hellresultEntity1 = new HellResultEntity();
         hellresultEntity1.setResultId(1L);
         hellresultEntity1.setRace(hellraceEntity1);

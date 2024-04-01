@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "6c989046-66d5-4d59-8342-99d3ac4346b9",
+		"name": "HellRunners Copy",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14965745"
+	},
+	"item": [
+		{
+			"name": "Összes futó alapadatai json struktúrában",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/vatt1/hellrun/getRunners"
+			},
+			"response": []
+		},
+		{
+			"name": "Futó felvétele post payloadban átadott adatok alapján",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"runnerId\": 5,\r\n        \"runnerName\": \"Szandra\",\r\n        \"runnerAge\": 43,\r\n        \"runnerGender\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/vatt1/hellrun/addRunner"
+			},
+			"response": []
+		},
+		{
+			"name": "Adott azonosítójú verseny összes futójának neve és időeredménye emelkedő sorrendben",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/vatt1/hellrun/getRaceRunners/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST json payloadban átadott versenyazonsító nevének és távolságának update-je",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"raceId\": 2,\r\n        \"raceName\": \"pokolifutas\",\r\n        \"raceKm\": 200\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/vatt1/hellrun/updateRace"
+			},
+			"response": []
+		},
+		{
+			"name": "Új eredmény rögzítése futók és versenyek számára",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"resultId\": 7,\r\n        \"raceId\": 1,\r\n        \"runnerId\": 4,\r\n        \"resultTime\": 4000\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/vatt1/hellrun/addResult"
+			},
+			"response": []
+		},
+		{
+			"name": "Átlagos futási idő számítása egy adott versenyre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/vatt1/hellrun//getAverageTime//1"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
