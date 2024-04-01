@@ -76,15 +76,17 @@ public class HellRunRestController {
         List<Object[]> dataList = hellresultRepository.getTimesByRaceId(id);
         double sum = 0;
         int count = 0;
-
-        for (Object[] array : dataList) {
-            for (Object obj : array) {
-                sum += ((Number) obj).doubleValue();
-                count++;
+        if (dataList != null) {
+            for (Object[] array : dataList) {
+                for (Object obj : array) {
+                    sum += ((Number) obj).doubleValue();
+                    count++;
+                }
             }
+            return sum / count;
+        } else {
+            return -1.0;
         }
-
-        return sum / count;
     }
 
     public static class RaceUpdateRequest {

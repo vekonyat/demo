@@ -56,12 +56,10 @@ public class HellRunController {
 
         newRace.setRaceName(raceData.getRaceName());
         newRace.setRaceKm(raceData.getRaceKm());
- //      newResult.setRace(hellraceRepository.findById(resultData.getRaceId()).orElse(null));
-  //      newResult.setRunner(hellrunnerRepository.findById(resultData.getRunnerId()).orElse(null));
-        hellraceRepository.save(newRace);
-        return "redirect:/races";
-
+        if (raceData.getRaceName() !=null && raceData.getRaceKm() > 0) {
+            hellraceRepository.save(newRace);
+        }
+        // not adding new race if data is invalid
+            return "redirect:/races";
     }
-
-
 }
