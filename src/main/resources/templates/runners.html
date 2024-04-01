@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>All Racess</h1>
+    <h1>All Runners</h1>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -25,9 +25,7 @@
         <tr th:each="runner : ${runners}">
             <td th:text="${runner[0]}"></td>
             <td th:text="${runner[1]}"></td>
-            <td>
-      <!--          <a th:href="@{/getRaceRunners/{id}(id=${race.raceId})}" class="btn btn-primary">Részletek</a> -->
-            </td>
+
         </tr>
         </tbody>
     </table>
@@ -36,9 +34,13 @@
     <form th:action="@{/}" th:method="get">
         <button class="btn btn-primary btn-lg px-4 mr-1 gap-3" type="submit">Kezdőlap</button>
     </form>
+    <form th:action="@{/races}" th:method="get">
+        <button type="submit" class="btn btn-primary btn-lg px-4 mr-1 gap-3">Versenyek</button>
+    </form>
     <form th:action="@{/newrace}" th:method="get">
         <button type="submit" class="btn btn-primary btn-lg px-4 mr-1 gap-3">Új Verseny</button>
     </form>
+
 </div>
 </body>
 </html>

@@ -13,12 +13,12 @@ import java.util.List;
 public class HellRunController {
 
     @Autowired
-    private HellRaceRepository hellraceRepository;
+    private final HellRaceRepository hellraceRepository;
     @Autowired
-    private HellRunnerRepository hellrunnerRepository;
+    private final HellRunnerRepository hellrunnerRepository;
 
     @Autowired
-    private HellResultRepository hellresultRepository;
+    private final HellResultRepository hellresultRepository;
 
     @Autowired
     public HellRunController(HellRunnerRepository hellrunnerRepository, HellResultRepository hellresultRepository, HellRaceRepository hellraceRepository) {
