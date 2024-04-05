@@ -5,6 +5,8 @@ http://16.16.182.113:8080/
 GDE AFT / Alkalmazás Fejlesztés Tenchológia tárgy 
 
 Bedandó feladat:
+![image](https://github.com/vekonyat/demo/assets/59034700/c3755af5-03a1-4dad-9cdf-1b19ae9d5b1f)
+![image](https://github.com/vekonyat/demo/assets/59034700/eb24260b-db06-4b1c-82c4-48d9865c64af)
 
 Beadandó feladat
 Futóverseny Kezelő Alkalmazás
