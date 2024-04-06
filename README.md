@@ -1,6 +1,6 @@
 Live demo runinning here:
 
-http://16.16.27.93:8080/
+http://16.16.85.224:8080/
 
 GDE AFT / Alkalmazás Fejlesztés Tenchológia tárgy 
 
