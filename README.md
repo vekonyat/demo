@@ -1,8 +1,12 @@
-Live demo runinning here:
+Live demo:
 
 http://16.16.85.224:8080/
 
-GDE AFT / Alkalmazás Fejlesztés Tenchológia tárgy 
+GDE
+
+Elosztott Alkalmazások tantárgy beadandó feladat
+
+Eredeti feladat: AFT / Alkalmazás Fejlesztés Tenchológia tárgy 
 
 Bedandó feladat:
 ![image](https://github.com/vekonyat/demo/assets/59034700/c3755af5-03a1-4dad-9cdf-1b19ae9d5b1f)
