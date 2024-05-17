@@ -4,7 +4,7 @@ http://16.16.85.224:8080/
 
 GDE
 
-Neptun kód: IZWQMA
+Neptun kód: IZVQMA
 Név: Vékony Attila
 
 Elosztott Alkalmazások tantárgy beadandó feladat
