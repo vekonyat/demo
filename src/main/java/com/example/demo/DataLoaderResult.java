@@ -78,7 +78,7 @@ public class DataLoaderResult implements CommandLineRunner {
         hellresultRepository.save(hellresultEntity1);
 
         HellResultEntity hellresultEntity2 = new HellResultEntity();
-        hellresultEntity1.setResultId(2L);
+        hellresultEntity2.setResultId(2L);
         hellresultEntity2.setRace(hellraceEntity1);
         hellresultEntity2.setRunner(hellrunnerEntity2);
         hellresultEntity2.setResultTime(3100);
@@ -86,7 +86,7 @@ public class DataLoaderResult implements CommandLineRunner {
         hellresultRepository.save(hellresultEntity2);
 
         HellResultEntity hellresultEntity3 = new HellResultEntity();
-        hellresultEntity1.setResultId(3L);
+        hellresultEntity3.setResultId(3L);
         hellresultEntity3.setRace(hellraceEntity1);
         hellresultEntity3.setRunner(hellrunnerEntity3);
         hellresultEntity3.setResultTime(3200);
@@ -94,7 +94,7 @@ public class DataLoaderResult implements CommandLineRunner {
         hellresultRepository.save(hellresultEntity3);
 
         HellResultEntity hellresultEntity4 = new HellResultEntity();
-        hellresultEntity1.setResultId(4L);
+        hellresultEntity4.setResultId(4L);
         hellresultEntity4.setRace(hellraceEntity2);
         hellresultEntity4.setRunner(hellrunnerEntity1);
         hellresultEntity4.setResultTime(3600);
@@ -102,7 +102,7 @@ public class DataLoaderResult implements CommandLineRunner {
         hellresultRepository.save(hellresultEntity4);
 
         HellResultEntity hellresultEntity5 = new HellResultEntity();
-        hellresultEntity1.setResultId(5L);
+        hellresultEntity5.setResultId(5L);
         hellresultEntity5.setRace(hellraceEntity2);
         hellresultEntity5.setRunner(hellrunnerEntity2);
         hellresultEntity5.setResultTime(3400);
@@ -110,7 +110,7 @@ public class DataLoaderResult implements CommandLineRunner {
         hellresultRepository.save(hellresultEntity5);
 
         HellResultEntity hellresultEntity6 = new HellResultEntity();
-        hellresultEntity1.setResultId(6L);
+        hellresultEntity6.setResultId(6L);
         hellresultEntity6.setRace(hellraceEntity2);
         hellresultEntity6.setRunner(hellrunnerEntity3);
         hellresultEntity6.setResultTime(3500);
